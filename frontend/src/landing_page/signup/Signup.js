@@ -1,9 +1,9 @@
 import React from "react";
-function Signup(){
-    return(
-        <h1>
-            Signup
-        </h1>
-    )
+import Auth from "./Auth";
+
+function Signup() {
+  return <Auth isSignup={true} />; // Pass prop to show signup form
 }
+
 export default Signup;
+    
