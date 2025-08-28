@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 function Hero() {
   return (
@@ -37,7 +38,7 @@ function Hero() {
           </p>
           <p>
             <a
-              href="https://rainmatter.com/"
+              href="#"
               style={{ textDecoration: "none" }}
             >
               Rainmatter,

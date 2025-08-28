@@ -42,7 +42,7 @@ function Team() {
             </a>{" "}
             /
             <a
-              href="https://tradingqna.com/u/Nikhil_Kamath/summary"
+              href="#"
               style={{ textDecoration: "none" }}
             >
               {" "}
@@ -50,7 +50,7 @@ function Team() {
             </a>{" "}
             /
             <a
-              href="https://x.com/nikhilkamathcio"
+              href="#"
               style={{ textDecoration: "none" }}
             >
               {" "}
