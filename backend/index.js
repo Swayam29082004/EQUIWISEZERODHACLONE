@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const STOCK_API_KEY = process.env.STOCK_API_KEY;
+
 // ---------------------- Routes & Models ----------------------
 const authRoute = require("./Routes/AuthRoute");
 const HoldingsModel = require("./model/HoldingsModel");
@@ -17,36 +18,32 @@ const marketRoute = require("./Routes/market");
 // ---------------------- Config ----------------------
 const PORT = process.env.PORT || 3002;
 const MONGO_URL = process.env.MONGO_URL;
+const allowedOrigins = [
+  process.env.CLIENT_URL,     // e.g. https://equiwise-frontend.onrender.com
+  process.env.DASHBOARD_URL,  // e.g. https://equiwise-dashboard.onrender.com
+];
 
 const app = express();
 
 // ---------------------- Middlewares ----------------------
-app.use(
-  cors({
-    origin: "http://localhost:3000", // Update this to your frontend URL
-    credentials: true,
-  })
-);
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ---------------------- Routes ----------------------
+app.use(cors({
+  origin: function(origin, callback){
+    if (!origin) return callback(null, true); // allow Postman, curl
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error("CORS policy: origin not allowed"));
+  },
+  credentials: true
+}));
 
-// Authentication Routes
+// ---------------------- Routes ----------------------
 app.use("/auth", authRoute);
-// Market Data Route
 app.use("/", marketRoute);
 
-app.use(
-  cors({
-    origin: "http://localhost:3005",
-    credentials: true,
-  })
-);
-
-// Get all holdings
 app.get("/allHoldings", async (req, res) => {
   try {
     const allHoldings = await HoldingsModel.find({});
@@ -57,7 +54,6 @@ app.get("/allHoldings", async (req, res) => {
   }
 });
 
-// Get all positions
 app.get("/allPositions", async (req, res) => {
   try {
     const allPositions = await PositionsModel.find({});
@@ -68,18 +64,10 @@ app.get("/allPositions", async (req, res) => {
   }
 });
 
-// Place new order
 app.post("/newOrder", async (req, res) => {
   try {
     const { name, qty, price, mode } = req.body;
-
-    const newOrder = new OrderModel({
-      name,
-      qty,
-      price,
-      mode,
-    });
-
+    const newOrder = new OrderModel({ name, qty, price, mode });
     await newOrder.save();
     res.status(201).json({ message: "Order saved successfully", order: newOrder });
   } catch (err) {
@@ -88,7 +76,6 @@ app.post("/newOrder", async (req, res) => {
   }
 });
 
-// Fetch all orders
 app.get("/orders", async (req, res) => {
   try {
     const orders = await OrderModel.find({});
@@ -99,12 +86,13 @@ app.get("/orders", async (req, res) => {
   }
 });
 
+app.get("/healthz", (req, res) => res.status(200).send("OK"));
+
 // ---------------------- Server Start ----------------------
 const startServer = async () => {
   try {
     await mongoose.connect(MONGO_URL);
     console.log("✅ Database Connected Successfully!");
-
     app.listen(PORT, () => {
       console.log(`🚀 Server is running on http://localhost:${PORT}`);
     });
