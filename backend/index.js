@@ -19,8 +19,10 @@ const marketRoute = require("./Routes/market");
 const PORT = process.env.PORT || 3002;
 const MONGO_URL = process.env.MONGO_URL;
 const allowedOrigins = [
-  process.env.CLIENT_URL,     // e.g. https://equiwise-frontend.onrender.com
-  process.env.DASHBOARD_URL,  // e.g. https://equiwise-dashboard.onrender.com
+  process.env.CLIENT_URL,     // Production frontend
+  process.env.DASHBOARD_URL,  // Production dashboard
+  "http://localhost:3000",    // Local frontend
+  "http://localhost:3001",    // Local dashboard
 ];
 
 const app = express();
@@ -32,13 +34,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: function(origin, callback){
-    if (!origin) return callback(null, true); // allow Postman, curl
+  origin: function(origin, callback) {
+    console.log("🔍 Incoming origin:", origin); // Debug
+    if (!origin) return callback(null, true); // Allow Postman, curl
     if (allowedOrigins.includes(origin)) return callback(null, true);
-    return callback(new Error("CORS policy: origin not allowed"));
+    return callback(new Error(`CORS policy: origin not allowed -> ${origin}`));
   },
-  credentials: true
+  credentials: true,
 }));
+
 
 // ---------------------- Routes ----------------------
 app.use("/auth", authRoute);
