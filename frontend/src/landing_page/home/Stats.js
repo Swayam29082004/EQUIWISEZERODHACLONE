@@ -30,17 +30,28 @@ function Stats() {
                 <div className='col-6 p-5 '>
                     <img 
                         src='/media/images/ecosystem.png' 
-                        alt='Ecosystem' 
+                        alt='Ecosystem illustration' 
                         style={{ width: '90%' }}
                     />
                     <div className='text-center'>
-                            <a href='#' className='mx-5' style={{ textDecoration: 'none' }}>
-                                Explore our products <i className="fa fa-arrow-right ms-2" aria-hidden="true"></i>
-                            </a>
-                            <a href='#'  style={{ textDecoration: 'none' }}>
-                                Try Kite demo <i className="fa fa-arrow-right ms-2" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                        <a 
+                            href='/' 
+                            className='mx-5' 
+                            style={{ textDecoration: 'none' }}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            Explore our products <i className="fa fa-arrow-right ms-2" aria-hidden="true"></i>
+                        </a>
+                        <a 
+                            href='/'  
+                            style={{ textDecoration: 'none' }}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            Try Kite demo <i className="fa fa-arrow-right ms-2" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

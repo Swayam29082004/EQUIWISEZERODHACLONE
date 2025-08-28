@@ -75,7 +75,7 @@ function Auth({ onAuthSuccess }) {
         </form>
         {!isSignup && (
           <div className="forgot-password">
-            <a href="#">Forgot password?</a>
+            <a href="/forgot-password">Forgot password?</a>
           </div>
         )}
         <div className="toggle-auth">

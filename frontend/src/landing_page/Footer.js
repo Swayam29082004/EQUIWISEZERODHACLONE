@@ -6,7 +6,7 @@ function Footer() {
       <div className="container border-top mt-5">
         <div className="row mt-5">
           {/* Main Logo and Copyright Section */}
-          <div className="col-4"> {/* Use a specific column size like col-4 */}
+          <div className="col-4">
             <img
               src="media/images/logo.svg"
               style={{ width: "50%" }}
@@ -16,66 +16,44 @@ function Footer() {
           </div>
 
           {/* Company Links Section */}
-          <div className="col-2"> {/* Use a specific column size like col-2 */}
+          <div className="col-2">
             <p>Company</p>
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>About</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Products</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Referral programs</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Careers</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Press & Media</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Zerodha Cares (CSR)</a>
-            <br />
+            <a href="/" style={linkStyle}>About</a><br />
+            <a href="/" style={linkStyle}>Products</a><br />
+            <a href="/" style={linkStyle}>Referral programs</a><br />
+            <a href="/" style={linkStyle}>Careers</a><br />
+            <a href="/" style={linkStyle}>Press & Media</a><br />
+            <a href="/" style={linkStyle}>Zerodha Cares (CSR)</a><br />
           </div>
 
           {/* Support Links Section */}
-          <div className="col-2"> {/* Use a specific column size like col-2 */}
+          <div className="col-2">
             <p>Support</p>
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Contact us</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Support portal</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>How to file a complaint?</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Status of your complaints</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Bulletin</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Circular</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Z-Connect blog</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Downloads</a>
-            <br />
+            <a href="/" style={linkStyle}>Contact us</a><br />
+            <a href="/" style={linkStyle}>Support portal</a><br />
+            <a href="/" style={linkStyle}>How to file a complaint?</a><br />
+            <a href="/" style={linkStyle}>Status of your complaints</a><br />
+            <a href="/" style={linkStyle}>Bulletin</a><br />
+            <a href="/" style={linkStyle}>Circular</a><br />
+            <a href="/" style={linkStyle}>Z-Connect blog</a><br />
+            <a href="/" style={linkStyle}>Downloads</a><br />
           </div>
 
           {/* Account Links Section */}
-          <div className="col-4"> {/* Use a specific column size like col-4 */}
+          <div className="col-4">
             <p>Account</p>
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Open demat account</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Minor demat account</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>NRI demat account</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Commodity</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Dematerialisation</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>Fund transfer</a>
-            <br />
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>MTF</a>
-            <br />
+            <a href="/" style={linkStyle}>Open demat account</a><br />
+            <a href="/" style={linkStyle}>Minor demat account</a><br />
+            <a href="/" style={linkStyle}>NRI demat account</a><br />
+            <a href="/" style={linkStyle}>Commodity</a><br />
+            <a href="/" style={linkStyle}>Dematerialisation</a><br />
+            <a href="/" style={linkStyle}>Fund transfer</a><br />
+            <a href="/" style={linkStyle}>MTF</a><br />
           </div>
         </div>
 
         {/* Legal and Regulatory Text Section */}
         <div className="mt-3 text-small text-muted" style={{ fontSize: "14px" }}>
-          {/* ... (The rest of your code for legal text is here) ... */}
           <p>
             Zerodha Broking Ltd.: Member of NSE, BSE​ &​ MCX – SEBI Registration
             no.: INZ000031633 CDSL/NSDL: Depository services through Zerodha
@@ -95,9 +73,7 @@ function Footer() {
             PAN, Address, Mobile Number, E-mail ID. Benefits: Effective
             Communication, Speedy redressal of the grievances
           </p>
-          <p>
-            Smart Online Dispute Resolution | Grievances Redressal Mechanism
-          </p>
+          <p>Smart Online Dispute Resolution | Grievances Redressal Mechanism</p>
           <p>
             Investments in securities market are subject to market risks; read
             all the related documents carefully before investing.
@@ -111,10 +87,7 @@ function Footer() {
             create pledge. 3) Check your securities / MF / bonds in the
             consolidated account statement issued by NSDL/CDSL every month.
           </p>
-          <p>
-            India's largest broker based on networth as per NSE. NSE broker
-            factsheet
-          </p>
+          <p>India's largest broker based on networth as per NSE. NSE broker factsheet</p>
           <p>
             "Prevent unauthorised transactions in your account. Update your
             mobile numbers/email IDs with your stock brokers. Receive
@@ -133,19 +106,25 @@ function Footer() {
             claiming to be part of Zerodha and offering such services, please
             create a ticket here.
           </p>
+
           <div className="mt-3 mb-3" style={{ textAlign: "center" }}>
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}>NSE</a> |
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}> BSE</a> |
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}> MCX</a> |
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}> Terms & conditions</a> |
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}> Policies & procedures</a> |
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}> Privacy policy</a> |
-            <a href="" style={{ textDecoration: "none", color: "rgba(112, 107, 107, 1)" }}> Disclosure</a>
+            <a href="/" style={linkStyle}>NSE</a> |{" "}
+            <a href="/" style={linkStyle}>BSE</a> |{" "}
+            <a href="/" style={linkStyle}>MCX</a> |{" "}
+            <a href="/" style={linkStyle}>Terms & conditions</a> |{" "}
+            <a href="/" style={linkStyle}>Policies & procedures</a> |{" "}
+            <a href="/" style={linkStyle}>Privacy policy</a> |{" "}
+            <a href="/" style={linkStyle}>Disclosure</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "rgba(112, 107, 107, 1)",
+};
 
 export default Footer;

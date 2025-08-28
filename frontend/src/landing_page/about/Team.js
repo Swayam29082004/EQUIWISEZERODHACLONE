@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 function Team() {
   return (
     <div className="container">
@@ -12,17 +12,15 @@ function Team() {
       >
         <div className="col-6 p-5 text-center">
           <img
-            src="media/images/nithinKamath.jpg" // Corrected image source for Nikhil
+            src="media/images/nithinKamath.jpg"
             style={{ borderRadius: "100%", width: "50%" }}
             alt="Nikhil Kamath"
           />
           <h4 className="mt-3">Nikhil Kamath</h4>
           <h6>Co-founder & CFO</h6>
-          {/* This is the code for the bio dropdown */}
           <div></div>
         </div>
         <div className="col-6 p-3">
-          {/* Updated bio text to correctly describe Nikhil Kamath */}
           <p>
             An astute and experienced investor, Nikhil Kamath heads financial
             planning at Zerodha. He co-founded Zerodha along with his brother
@@ -35,33 +33,27 @@ function Team() {
             2023.
           </p>
           <p>
-            Connect on
-            <a href="/" style={{ textDecoration: "none" }}>
-              {" "}
-              Homepage
-            </a>{" "}
-            /
+            Connect on{" "}
+            <a href="/" style={linkStyle}>Homepage</a> /{" "}
+            <a href="/" style={linkStyle}>TradingQnA</a> /{" "}
             <a
-              href="#"
-              style={{ textDecoration: "none" }}
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
             >
-              {" "}
-              tradingQnA
-            </a>{" "}
-            /
-            <a
-              href="#"
-              style={{ textDecoration: "none" }}
-            >
-              {" "}
               X
-            </a>{" "}
-            .
+            </a>.
           </p>
         </div>
       </div>
     </div>
   );
 }
+
+const linkStyle = {
+  textDecoration: "none",
+  color: "rgba(112, 107, 107, 1)",
+};
 
 export default Team;
